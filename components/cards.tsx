@@ -29,7 +29,7 @@ export function TeamCard({ team }: { team: Team }) {
         fill
         sizes="(max-width: 700px) 100vw, 50vw"
       />
-    </Link>
+      <div className="team-card-top">\n        <span className="pill">{team.status}</span>\n      </div>\n      <div className="team-card-bottom">\n        <p className="eyebrow">HYP COMPETITIVE DIVISION</p>\n        <h3>{team.title}</h3>\n      </div>\n    </Link>
   );
 }
 export function PlayerCard({ player, index }: { player: Player; index: number }) {
