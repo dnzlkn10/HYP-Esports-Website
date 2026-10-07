@@ -12,6 +12,14 @@ const tr: Record<string,string> = {
   "CONTACTS":"İLETİŞİM","STAY CONNECTED.":"BAĞLANTIDA KAL.","JOIN OUR":"TOPLULUĞUMUZA","DISCORD.":"DISCORD'DA KATIL.","STEAM GROUP.":"STEAM GRUBUNA KATIL.","JOIN DISCORD ↗":"DISCORD'A KATIL ↗","JOIN STEAM GROUP ↗":"STEAM GRUBUNA KATIL ↗",
   "INSIDE THE ORGANIZATION":"ORGANİZASYONUN İÇİNDEN","HYP STORIES":"HYP HABERLERİ","THE ROAD TO COMPETITION":"REKABET YOLU","BEHIND THE COMPETITION":"REKABETİN ARKASINDA","HYP IN FRAME":"KADRAJDA HYP","WEAR THE AMBITION":"HIRSI TAŞI",
   "PLAYER PROFILE":"OYUNCU PROFİLİ","PLAYER SETUP":"OYUNCU EKİPMANLARI","MY GEAR":"EKİPMANLARIM","DOĞUM TARİHİ":"DOĞUM TARİHİ","ÜLKE":"ÜLKE","COMING SOON":"YAKINDA","Upcoming":"Yaklaşan","Past":"Geçmiş","Finished":"Tamamlandı",
+  "PRECISION":"HASSASİYET","DISCIPLINE":"DİSİPLİN","AMBITION":"HIRS","HYP COMPETITIVE DIVISION":"HYP REKABETÇİ TAKIMI","Roster in development":"Kadro geliştiriliyor","Five-player roster":"Beş oyunculu kadro",
+  "Explore teams":"Takımları keşfet","Latest matches":"Son maçlar","Explore VALORANT":"VALORANT'ı keşfet","Explore CS2":"CS2'yi keşfet","ROSTER · 05 POSITIONS":"KADRO · 05 POZİSYON",
+  "FROM THE SERVER":"SUNUCUDAN","OUR JOURNEY":"YOLCULUĞUMUZ","ACHIEVEMENTS":"BAŞARILAR","01 / THE BEGINNING":"01 / BAŞLANGIÇ","THE STORY IS STILL BEING WRITTEN.":"HİKÂYE HÂLÂ YAZILIYOR.",
+  "Verified milestones and competition results will appear here. Every great journey starts with the first round.":"Doğrulanmış başarılar ve turnuva sonuçları burada yer alacak. Her büyük yolculuk ilk rauntta başlar.",
+  "Fixtures, tournaments and editorial content are illustrative. Official schedules and results will be announced here.":"Fikstürler, turnuvalar ve içerikler örnek amaçlıdır. Resmî program ve sonuçlar burada duyurulacaktır.",
+  "Sample events · participation and dates are not confirmed.":"Örnek etkinlikler · katılım ve tarihler kesinleşmemiştir.","UPCOMING":"YAKLAŞAN","RESULTS":"SONUÇLAR","ALL":"TÜMÜ","MATCH":"MAÇ","MATCHES":"MAÇ","TIMES IN TRT (UTC+3)":"SAATLER TRT (UTC+3)",
+  "HYP COMPETITIVE DIVISION":"HYP REKABETÇİ TAKIMI","THE NEXT CHAPTER":"YENİ BÖLÜM","TO BE ANNOUNCED":"DUYURULACAK","Role to be announced":"Rol duyurulacak",
+  "Official team jersey":"Resmî takım forması","COLLECTIONS · CONTENT COMING SOON":"KOLEKSİYON · İÇERİK YAKINDA","Explore collection":"Koleksiyonu keşfet",
   "EXPLORE HYP":"HYP'Yİ KEŞFET","STAY CONNECTED":"BAĞLANTIDA KAL","BUILT FOR THE NEXT GENERATION.":"YENİ NESİL İÇİN TASARLANDI.","All rights reserved.":"Tüm hakları saklıdır."
 };
 
@@ -24,7 +32,17 @@ function translateText(root: HTMLElement, toTurkish: boolean) {
     const el=node.parentElement; if(!el || ["SCRIPT","STYLE"].includes(el.tagName)) return;
     if(!el.dataset.enText) el.dataset.enText=value;
     const en=el.dataset.enText;
-    if(toTurkish && tr[en]) node.nodeValue=raw.replace(value,tr[en]);
+    if(toTurkish) {
+      let translated=tr[en];
+      if(!translated){
+        translated=en
+          .replace(/\bUPCOMING\b/g,"YAKLAŞAN")
+          .replace(/\bFINISHED\b/g,"TAMAMLANDI")
+          .replace(/\bTEAMS\b/g,"TAKIM")
+          .replace(/\bCOMING SOON\b/g,"YAKINDA");
+      }
+      node.nodeValue=raw.replace(value,translated);
+    }
     else if(!toTurkish && en) node.nodeValue=raw.replace(value,en);
   });
 }
