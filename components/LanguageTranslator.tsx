@@ -33,7 +33,7 @@ function translateText(root: HTMLElement, toTurkish: boolean) {
     if(!el.dataset.enText) el.dataset.enText=value;
     const en=el.dataset.enText ?? value;
     if(toTurkish) {
-      let translated=tr[en];
+      let translated: string = tr[en] ?? "";
       if(!translated){
         translated=en
           .replace(/\bUPCOMING\b/g,"YAKLAŞAN")
@@ -41,7 +41,7 @@ function translateText(root: HTMLElement, toTurkish: boolean) {
           .replace(/\bTEAMS\b/g,"TAKIM")
           .replace(/\bCOMING SOON\b/g,"YAKINDA");
       }
-      node.nodeValue=raw.replace(value,translated);
+      node.nodeValue=raw.replace(value, translated || en);
     }
     else if(!toTurkish && en) node.nodeValue=raw.replace(value,en);
   });
