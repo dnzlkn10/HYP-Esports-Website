@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Reveal } from "@/components/Reveal";
+import { LanguageTranslator } from "@/components/LanguageTranslator";
 import "./globals.css";
 export const metadata: Metadata = {
   title: {
@@ -31,7 +32,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="tr">
       <body>
         <a href="#main-content" className="skip-link">
           Skip to content
@@ -40,6 +41,7 @@ export default function RootLayout({
         <main id="main-content">{children}</main>
         <Footer />
         <Reveal />
+        <LanguageTranslator />
       </body>
     </html>
   );
