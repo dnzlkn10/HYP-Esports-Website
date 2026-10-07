@@ -21,7 +21,7 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="hero-grid" aria-hidden="true" />
-        <div className="hero-banner"><Image src="/banner.png" alt="HYP Esports" fill priority sizes="100vw" /></div>
+        <div className="hero-banner"><Image src="/banner new.png" alt="HYP Esports" fill priority sizes="100vw" /></div>
         <div className="container hero-content hero-content-hidden">
           <p className="eyebrow">
             <span />
