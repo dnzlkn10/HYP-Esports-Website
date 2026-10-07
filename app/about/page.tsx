@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHeading } from "@/components/ui";
-import { JoinBanner } from "@/components/home/JoinBanner";
 export const metadata: Metadata = {
   title: "About",
   description:
@@ -78,7 +77,6 @@ export default function Page() {
           by HYP before public launch.
         </p>
       </section>
-      <JoinBanner />
     </>
   );
 }
