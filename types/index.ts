@@ -1,5 +1,5 @@
 export type Game = "CS2" | "VALORANT";
-export interface Equipment { name:string; category:string; image?:string; }
+export interface Equipment { name:string; category:string; image?:string; productUrl?:string; }
 export interface Player { id:string; nickname:string; role:string; nationality?:string; image?:string; socials?:{label:string;url:string}[]; announced:boolean; equipment?:Equipment[]; }
 export interface Team { slug:"cs2"|"valorant"; game:Game; title:string; description:string; status:string; players:Player[]; }
 export interface Match { id:string; game:Game; opponent:string; opponentTag:string; tournament:string; date:string; format:"BO1"|"BO3"|"BO5"; status:"Upcoming"|"Finished"; score?:[number,number]; }
