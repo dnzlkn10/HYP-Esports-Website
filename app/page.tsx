@@ -15,7 +15,6 @@ import {
   ProductCard,
 } from "@/components/cards";
 import { ButtonLink, SectionHeading, SampleNotice } from "@/components/ui";
-import { JoinBanner } from "@/components/home/JoinBanner";
 export default function Home() {
   return (
     <>
@@ -159,7 +158,6 @@ export default function Home() {
           <ProductCard product={products[0]} />
         </div>
       </section>
-      <JoinBanner />
       <section className="container final-statement">
         <p className="eyebrow">MORE THAN A TAG.</p>
         <Link href="/about">
