@@ -18,8 +18,8 @@ export default function Page() {
         <div className="about-feature">
           <div className="about-art">
             <Image
-              src="/arena.svg"
-              alt="Original geometric HYP competition illustration"
+              src="/hyp logo.png"
+              alt="HYP Esports logo"
               fill
               sizes="(max-width: 800px) 100vw, 50vw"
             />
@@ -32,15 +32,10 @@ export default function Page() {
               <span className="yellow">AMBITION.</span>
             </h2>
             <p>
-              HYP Esports is a developing competitive organization with
-              Counter-Strike 2 and VALORANT at its core. We bring together
-              players who believe that discipline, trust and consistent work can
-              turn potential into performance.
+              HYP Esports is built for players who want more than just to play. We compete to improve, to prove ourselves, and to build something that carries our name forward.
             </p>
             <p>
-              Our next chapter is about building a foundation: strong teams, an
-              engaged community and an identity that means something every time
-              we enter the server.
+              Founded around a shared passion for competitive gaming, HYP brings together ambitious players under one identity. From Counter-Strike 2 to VALORANT, our focus is simple: discipline, teamwork, consistency and the hunger to win.
             </p>
           </div>
         </div>
@@ -53,9 +48,7 @@ export default function Page() {
               TO COMPETE.
             </h3>
             <p>
-              Give emerging players a place to develop their skills, learn to
-              compete as a team and approach every challenge with purpose.
-              Progress is a shared responsibility.
+              Give developing players a serious competitive environment where individual skill becomes teamwork. Build rosters that communicate, improve and enter every server with a purpose.
             </p>
           </article>
           <article>
@@ -66,16 +59,10 @@ export default function Page() {
               THAT LASTS.
             </h3>
             <p>
-              Grow into an organization recognized for its competitive
-              standards, its commitment to young talent and a community that
-              stays connected through every win and every lesson.
+              Grow HYP from a team into a recognizable esports organization — known not only for winning, but for its identity, its players and the standard it represents.
             </p>
           </article>
         </div>
-        <p className="sample-note">
-          Organization copy is a proposed starting point and should be reviewed
-          by HYP before public launch.
-        </p>
       </section>
     </>
   );
