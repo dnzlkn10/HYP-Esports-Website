@@ -2018,3 +2018,8 @@ textarea::placeholder {
     transform: none;
   }
 }
+
+/* Player profiles */
+.player-profile{padding-top:35px}.profile-hero{display:grid;grid-template-columns:minmax(260px,38%) 1fr;min-height:420px;margin-bottom:70px;overflow:hidden}.profile-portrait{position:relative;min-height:420px;background:linear-gradient(145deg,#24261f,#101112)}.profile-portrait img{object-fit:contain}.profile-hero>div:last-child{display:flex;flex-direction:column;justify-content:center;padding:55px}.profile-hero h2{font-size:clamp(56px,8vw,112px);line-height:.9;margin:20px 0}.equipment-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.equipment-card{overflow:hidden}.equipment-art{height:220px;position:relative;background:#18191b}.equipment-art img{object-fit:cover}.equipment-card>p{font-size:9px;letter-spacing:.18em;color:var(--yellow);text-transform:uppercase;margin:18px 18px 7px}.equipment-card h3{font-size:20px;margin:0 18px 22px}.player-info .text-link{margin-top:10px;font-size:9px}
+@media(max-width:900px){.equipment-grid{grid-template-columns:repeat(2,1fr)}.profile-hero{grid-template-columns:1fr}.profile-hero>div:last-child{padding:30px}.profile-portrait{min-height:330px}}
+@media(max-width:520px){.equipment-grid{grid-template-columns:1fr}}
