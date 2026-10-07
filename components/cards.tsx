@@ -36,9 +36,7 @@ export function TeamCard({ team }: { team: Team }) {
       <div className="team-card-bottom">
         <p className="eyebrow">HYP COMPETITIVE DIVISION</p>
         <h3>{team.title}</h3>
-        <span className="text-link">
-          View team <ArrowUpRight size={18} />
-        </span>
+        
       </div>
     </Link>
   );
@@ -132,16 +130,14 @@ export function NewsCard({ article }: { article: Article }) {
         <time dateTime={article.date}>{dateLabel(article.date, true)}</time>
         <h3>{article.title}</h3>
         <p>{article.description}</p>
-        <span className="text-link">
-          Read more <ArrowUpRight size={15} />
-        </span>
+        
       </div>
     </Link>
   );
 }
 export function TournamentCard({ tournament }: { tournament: Tournament }) {
   return (
-    <article className="tournament-card card">
+    <Link href={`/tournaments/${tournament.slug}`} className="tournament-card card clickable-card">
       <div className="tournament-top">
         <Trophy size={29} strokeWidth={1} />
         <span className="pill">{tournament.status}</span>
@@ -153,10 +149,7 @@ export function TournamentCard({ tournament }: { tournament: Tournament }) {
       <p className="muted">
         {dateLabel(tournament.start, true)} — {dateLabel(tournament.end, true)}
       </p>
-      <Link href={`/tournaments/${tournament.slug}`} className="text-link">
-        Event details <ArrowUpRight size={17} />
       </Link>
-    </article>
   );
 }
 export function ProductCard({ product }: { product: Product }) {
