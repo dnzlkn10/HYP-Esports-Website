@@ -18,7 +18,7 @@ const tr: Record<string,string> = {
   "Verified milestones and competition results will appear here. Every great journey starts with the first round.":"Doğrulanmış başarılar ve turnuva sonuçları burada yer alacak. Her büyük yolculuk ilk rauntta başlar.",
   "Fixtures, tournaments and editorial content are illustrative. Official schedules and results will be announced here.":"Fikstürler, turnuvalar ve içerikler örnek amaçlıdır. Resmî program ve sonuçlar burada duyurulacaktır.",
   "Sample events · participation and dates are not confirmed.":"Örnek etkinlikler · katılım ve tarihler kesinleşmemiştir.","UPCOMING":"YAKLAŞAN","RESULTS":"SONUÇLAR","ALL":"TÜMÜ","MATCH":"MAÇ","MATCHES":"MAÇ","TIMES IN TRT (UTC+3)":"SAATLER TRT (UTC+3)",
-  "HYP COMPETITIVE DIVISION":"HYP REKABETÇİ TAKIMI","THE NEXT CHAPTER":"YENİ BÖLÜM","TO BE ANNOUNCED":"DUYURULACAK","Role to be announced":"Rol duyurulacak",
+  "THE NEXT CHAPTER":"YENİ BÖLÜM","TO BE ANNOUNCED":"DUYURULACAK","Role to be announced":"Rol duyurulacak",
   "Official team jersey":"Resmî takım forması","COLLECTIONS · CONTENT COMING SOON":"KOLEKSİYON · İÇERİK YAKINDA","Explore collection":"Koleksiyonu keşfet",
   "EXPLORE HYP":"HYP'Yİ KEŞFET","STAY CONNECTED":"BAĞLANTIDA KAL","BUILT FOR THE NEXT GENERATION.":"YENİ NESİL İÇİN TASARLANDI.","All rights reserved.":"Tüm hakları saklıdır."
 };
