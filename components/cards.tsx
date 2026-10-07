@@ -24,19 +24,11 @@ export function TeamCard({ team }: { team: Team }) {
       className={`team-card card ${team.slug}`}
     >
       <Image
-        src={team.slug === "cs2" ? "/cs takım planı.png" : "/Neon Sarı Valorant Takım Posteri.png"}
+        src={team.slug === "cs2" ? "/cs2 banner.png" : "/valorant banner.png"}
         alt=""
         fill
         sizes="(max-width: 700px) 100vw, 50vw"
       />
-      <div className="team-card-top">
-        <span className="pill">{team.status}</span>
-      </div>
-      <div className="team-card-bottom">
-        <p className="eyebrow">HYP COMPETITIVE DIVISION</p>
-        <h3>{team.title}</h3>
-        
-      </div>
     </Link>
   );
 }
