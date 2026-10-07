@@ -7,7 +7,7 @@ export const tournaments: Tournament[] = [
     start: "2026-10-17",
     end: "2026-10-18",
     status: "Upcoming",
-    participants: 0,
+    participants: 6,
     organizer: "HYP Esports",
     description:
       "HYP Esports' upcoming 5v5 Counter-Strike 2 tournament. The event begins Saturday, 17 October 2026. Participating teams, bracket and match schedule will be announced before the tournament.",
