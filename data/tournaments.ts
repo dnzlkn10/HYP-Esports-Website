@@ -12,18 +12,4 @@ export const tournaments: Tournament[] = [
     description:
       "HYP Esports' upcoming 5v5 Counter-Strike 2 tournament. The event begins Saturday, 17 October 2026. Participating teams, bracket and match schedule will be announced before the tournament.",
   },
-
-
-  {
-    slug: "open-qualifier",
-    name: "OPEN QUALIFIER",
-    game: "CS2",
-    start: "2026-09-20",
-    end: "2026-09-28",
-    status: "Past",
-    participants: 32,
-    organizer: "Sample organizer",
-    description:
-      "An example archived event. Results and participation shown on this site are demonstration content.",
-  },
 ];
