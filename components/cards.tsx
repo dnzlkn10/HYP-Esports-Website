@@ -186,8 +186,8 @@ export function ProductCard({ product }: { product: Product }) {
     <Link href={`/shop/${product.slug}`} className="product-card card">
       <div className="product-art">
         <Image
-          src={product.slug === "pro-jersey" ? "/jersey.svg" : "/tee.svg"}
-          alt={`${product.name} illustrative apparel concept`}
+          src={product.slug === "pro-jersey" ? "/jersey.png" : "/tee.svg"}
+          alt={product.name}
           fill
           sizes="(max-width: 700px) 100vw, 50vw"
         />
