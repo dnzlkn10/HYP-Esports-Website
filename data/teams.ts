@@ -8,7 +8,7 @@ const equipment = [
 const player = (nickname: string, index: number, game: string): Player => ({
   id: `${game}-${index}`,
   nickname,
-  role: nickname === "TBA" ? "TO BE ANNOUNCED" : nickname === "JINAZEE" ? "Star Rifler" : nickname === "Salwo" ? "Second Rifler" : nickname === "Script" ? "IGL" : "Role to be announced",
+  role: nickname === "TBA" ? "TO BE ANNOUNCED" : nickname === "JINAZEE" ? "Entry" : nickname === "Salwo" ? "Rifler" : nickname === "Script" ? "IGL" : "Role to be announced",
   announced: nickname !== "TBA",
   nationality: nickname === "JINAZEE" ? "Türkiye" : undefined,
   birthDate: nickname === "JINAZEE" ? "8 Eylül 2010" : undefined,
