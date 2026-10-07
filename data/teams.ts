@@ -12,6 +12,8 @@ const player = (nickname: string, index: number, game: string): Player => ({
   announced: nickname !== "TBA",
   nationality: nickname === "JINAZEE" ? "Türkiye" : undefined,
   birthDate: nickname === "JINAZEE" ? "8 Eylül 2010" : undefined,
+  realName: nickname === "JINAZEE" ? "Deniz Alkan" : undefined,
+  socials: nickname === "JINAZEE" ? [{label:"Instagram",url:"https://www.instagram.com/alkanairliness/"},{label:"Kick",url:"https://kick.com/jinazee"},{label:"YouTube",url:"https://www.youtube.com/@Jinazee"}] : undefined,
   bio: nickname === "JINAZEE" ? "HYP Esports CS2 oyuncusu. Rekabetçi oyun, gelişim ve takım disiplini odaklı." : undefined,
   equipment: nickname === "JINAZEE" ? equipment : undefined,
 });
