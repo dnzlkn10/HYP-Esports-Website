@@ -1,9 +1,9 @@
 import type { Team, Player } from "@/types";
 const equipment = [
-  { name:"Wraith W75", category:"Keyboard", image:"/klavye.png" },
-  { name:"Logitech G Pro X Superlight 2", category:"Mouse", image:"/mouse.png" },
-  { name:"Wraith Spirit of Aim Pro", category:"Mousepad", image:"/mouse pad.png" },
-  { name:"Logitech G733", category:"Headset", image:"/kulaklık.png" },
+  { name:"Wraith W75", category:"Keyboard", image:"/klavye.png", description:"75% kompakt mekanik klavye. Hızlı oyun kullanımı için sade yerleşim, rotary knob ve kompakt masa düzeni." },
+  { name:"Logitech G Pro X Superlight 2", category:"Mouse", image:"/mouse.png", description:"Ultra hafif kablosuz oyuncu faresi. HERO 2 sensör, düşük gecikme ve rekabetçi FPS odaklı performans." },
+  { name:"Wraith Spirit of Aim Pro", category:"Mousepad", image:"/mouse pad.png", description:"Kontrollü ve dengeli kayış sunan geniş oyuncu mousepad’i; hassas aim ve tutarlı mouse hareketleri için." },
+  { name:"Logitech G733", category:"Headset", image:"/kulaklık.png", description:"Kablosuz LIGHTSPEED oyuncu kulaklığı. Hafif yapı, uzun kullanım konforu ve takım iletişimi için mikrofon." },
 ];
 const player = (nickname: string, index: number, game: string): Player => ({
   id: `${game}-${index}`,
