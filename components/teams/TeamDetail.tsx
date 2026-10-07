@@ -12,13 +12,9 @@ export function TeamDetail({ slug }: { slug: "cs2" | "valorant" }) {
   const team = teams.find((t) => t.slug === slug)!;
   return (
     <>
-      <PageHeading
-        label={`HYP ${team.game} DIVISION`}
-        title={team.title}
-        description={team.description}
-      />
+      <section className="roster-hero"><div className="container"><p className="eyebrow"><span/>HYP ESPORTS</p><h1>{team.title}</h1><p className="roster-intro">{team.description}</p></div></section>
       <section className="container section team-detail">
-        <div className="team-summary">
+        <nav className="game-tabs"><a className={slug==="cs2"?"active":""} href="/teams/cs2">COUNTER-STRIKE 2</a><a className={slug==="valorant"?"active":""} href="/teams/valorant">VALORANT</a></nav><div className="team-summary navi-summary">
           <span className="pill">{team.status}</span>
           <span>ROSTER · 05 POSITIONS</span>
           <ButtonLink
@@ -33,10 +29,7 @@ export function TeamDetail({ slug }: { slug: "cs2" | "valorant" }) {
             <PlayerCard player={p} index={i} key={p.id} />
           ))}
         </div>
-        <p className="sample-note">
-          Player graphics are placeholders. Roles, nationality and social
-          accounts will be added when verified.
-        </p>
+
       </section>
       <section className="container section">
         <SectionHeading

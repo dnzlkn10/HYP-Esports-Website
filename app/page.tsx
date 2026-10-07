@@ -15,22 +15,13 @@ import {
   ProductCard,
 } from "@/components/cards";
 import { ButtonLink, SectionHeading, SampleNotice } from "@/components/ui";
-import { JoinBanner } from "@/components/home/JoinBanner";
 export default function Home() {
   return (
     <>
       <section className="hero">
         <div className="hero-grid" aria-hidden="true" />
-        <div className="hero-art">
-          <Image
-            src="/arena.svg"
-            alt=""
-            fill
-            priority
-            sizes="(max-width: 800px) 100vw, 65vw"
-          />
-        </div>
-        <div className="container hero-content">
+        <div className="hero-banner"><Image src="/banner new.png" alt="HYP Esports" fill priority sizes="100vw" /></div>
+        <div className="container hero-content hero-content-hidden">
           <p className="eyebrow">
             <span />
             THE NEXT GENERATION OF COMPETITION
@@ -56,16 +47,7 @@ export default function Home() {
             </ButtonLink>
           </div>
         </div>
-        <div className="container hero-bottom">
-          <a href="#divisions">
-            SCROLL TO EXPLORE <ArrowDown size={14} />
-          </a>
-          <span>
-            02 GAMES <i /> ONE AMBITION
-          </span>
-          <span className="hero-coordinate">EST. HYP / NEXT CHAPTER</span>
-        </div>
-      </section>
+        </section>
       <div className="identity-strip" aria-hidden="true">
         <span>PRECISION</span>
         <i>✳</i>
@@ -176,7 +158,6 @@ export default function Home() {
           <ProductCard product={products[0]} />
         </div>
       </section>
-      <JoinBanner />
       <section className="container final-statement">
         <p className="eyebrow">MORE THAN A TAG.</p>
         <Link href="/about">

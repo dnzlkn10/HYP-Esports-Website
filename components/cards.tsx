@@ -24,65 +24,40 @@ export function TeamCard({ team }: { team: Team }) {
       className={`team-card card ${team.slug}`}
     >
       <Image
-        src={team.slug === "cs2" ? "/arena.svg" : "/team.svg"}
+        src={team.slug === "cs2" ? "/cs2 banner.png" : "/valorant banner.png"}
         alt=""
         fill
         sizes="(max-width: 700px) 100vw, 50vw"
       />
       <div className="team-card-top">
         <span className="pill">{team.status}</span>
-        <span className="team-index">{team.slug === "cs2" ? "01" : "02"}</span>
       </div>
       <div className="team-card-bottom">
         <p className="eyebrow">HYP COMPETITIVE DIVISION</p>
         <h3>{team.title}</h3>
-        <span className="text-link">
-          View team <ArrowUpRight size={18} />
-        </span>
       </div>
     </Link>
   );
 }
-export function PlayerCard({
-  player,
-  index,
-}: {
-  player: Player;
-  index: number;
-}) {
-  return (
-    <article
-      className={`player-card card ${!player.announced ? "unannounced" : ""}`}
-    >
-      <div className="player-art">
-        <Image
-          src={player.image || "/player.svg"}
-          alt={player.image ? `${player.nickname} portrait` : ""}
-          fill
-          sizes="(max-width: 550px) 50vw, (max-width: 900px) 33vw, 20vw"
-        />
-        <span className="player-number">0{index + 1}</span>
-        {!player.announced && <span className="player-question">?</span>}
-        <span className="player-caption">
-          {player.announced ? "HYP ESPORTS" : "THE NEXT CHAPTER"}
-        </span>
-      </div>
-      <div className="player-info">
-        <h3>{player.nickname}</h3>
-        <p>{player.role}</p>
-        {player.nationality && <small>{player.nationality}</small>}
-        {player.socials?.map((s) => (
-          <a
-            key={s.label}
-            href={s.url}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            {s.label}
-          </a>
-        ))}
-      </div>
-    </article>
+export function PlayerCard({ player, index }: { player: Player; index: number }) {
+  const game = player.id.split("-")[0];
+  const inner = <>
+    <div className="player-art">
+      <Image src={player.image || "/player.svg"} alt={player.image ? `${player.nickname} portrait` : ""} fill sizes="(max-width: 550px) 50vw, (max-width: 900px) 33vw, 20vw" />
+      <span className="player-number">0{index + 1}</span>
+      {!player.announced && <span className="player-question">?</span>}
+      <span className="player-caption">{player.announced ? "HYP ESPORTS" : "THE NEXT CHAPTER"}</span>
+    </div>
+    <div className="player-info">
+      <h3>{player.nickname}</h3>
+      {game === "cs2" && <div className="cs-role-row"><span className={`role-symbol role-${player.role.toLowerCase().replaceAll(" ","-")}`}>{player.role === "IGL" ? "♛" : player.role === "Entry" ? "✦" : "◆"}</span><span className="cs-role-badge">{player.role}</span></div>}
+      {player.nationality && <small>{player.nationality}</small>}
+    </div>
+  </>;
+  return player.announced ? (
+    <Link href={`/teams/${game}/${encodeURIComponent(player.nickname.toLowerCase())}`} className="player-card card player-card-link">{inner}</Link>
+  ) : (
+    <article className="player-card card unannounced">{inner}</article>
   );
 }
 export function MatchCard({ match }: { match: Match }) {
@@ -153,16 +128,14 @@ export function NewsCard({ article }: { article: Article }) {
         <time dateTime={article.date}>{dateLabel(article.date, true)}</time>
         <h3>{article.title}</h3>
         <p>{article.description}</p>
-        <span className="text-link">
-          Read more <ArrowUpRight size={15} />
-        </span>
+        
       </div>
     </Link>
   );
 }
 export function TournamentCard({ tournament }: { tournament: Tournament }) {
   return (
-    <article className="tournament-card card">
+    <Link href={`/tournaments/${tournament.slug}`} className="tournament-card card clickable-card">
       <div className="tournament-top">
         <Trophy size={29} strokeWidth={1} />
         <span className="pill">{tournament.status}</span>
@@ -174,10 +147,7 @@ export function TournamentCard({ tournament }: { tournament: Tournament }) {
       <p className="muted">
         {dateLabel(tournament.start, true)} — {dateLabel(tournament.end, true)}
       </p>
-      <Link href={`/tournaments/${tournament.slug}`} className="text-link">
-        Event details <ArrowUpRight size={17} />
       </Link>
-    </article>
   );
 }
 export function ProductCard({ product }: { product: Product }) {
@@ -185,8 +155,8 @@ export function ProductCard({ product }: { product: Product }) {
     <Link href={`/shop/${product.slug}`} className="product-card card">
       <div className="product-art">
         <Image
-          src={product.slug === "pro-jersey" ? "/jersey.svg" : "/tee.svg"}
-          alt={`${product.name} illustrative apparel concept`}
+          src={product.slug === "pro-jersey" ? "/Altın HYP Esports forma logosu.png" : "/tee.svg"}
+          alt={product.name}
           fill
           sizes="(max-width: 700px) 100vw, 50vw"
         />
