@@ -2061,3 +2061,15 @@ textarea::placeholder {
 .community-card>p:not(.eyebrow){font-size:14px;line-height:1.5;max-width:430px}
 .community-cta{left:30px;right:30px;bottom:28px;min-height:48px}
 @media(max-width:760px){.contacts-hero h1{font-size:clamp(42px,13vw,62px)}.community-card{min-height:320px;padding:24px}.community-cta{left:24px;right:24px;bottom:24px}}
+
+/* Contacts typography + platform icon correction */
+.contacts-hero h1{font-size:clamp(40px,4.8vw,68px);font-weight:800;letter-spacing:-.045em}
+.community-card{min-height:285px}
+.community-card h2{font-size:clamp(25px,2.15vw,34px);font-weight:800;letter-spacing:-.025em;line-height:1.02}
+.community-card .eyebrow{font-size:8px}
+.community-card>p:not(.eyebrow){font-size:12.5px;line-height:1.45}
+.community-icon{width:46px;height:46px}
+.community-icon svg{width:27px;height:27px;display:block}
+.discord-icon{color:#fff}
+.steam-icon{color:var(--yellow)}
+.community-cta{min-height:44px;font-size:10px}
