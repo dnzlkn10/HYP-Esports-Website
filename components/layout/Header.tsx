@@ -1,15 +1,13 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { navigation } from "@/data/site";
 import { Logo } from "./Logo";
 export function Header() {
   const [open, setOpen] = useState(false);
   const path = usePathname();
-  const router = useRouter();
-  const searchParams = useSearchParams();
   const [language, setLanguage] = useState<"tr" | "en">("tr");
   const labels: Record<string, { tr: string; en: string }> = {
     "/": { tr: "ANA SAYFA", en: "HOME" },
@@ -37,9 +35,6 @@ export function Header() {
     window.localStorage.setItem("hyp-language", next);
     document.documentElement.lang = next;
     document.documentElement.dataset.language = next;
-    const params = new URLSearchParams(searchParams.toString());
-    if (next === "tr") params.delete("lang"); else params.set("lang", "en");
-    router.replace(`${path}${params.size ? `?${params}` : ""}`, { scroll: false });
   };
   useEffect(() => {
     if (!open) return;
