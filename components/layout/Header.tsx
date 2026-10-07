@@ -1,15 +1,34 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { navigation } from "@/data/site";
 import { Logo } from "./Logo";
 export function Header() {
   const [open, setOpen] = useState(false);
   const path = usePathname();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [language, setLanguage] = useState<"tr" | "en">("tr");
   const button = useRef<HTMLButtonElement>(null);
   const panel = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const saved = window.localStorage.getItem("hyp-language");
+    const next = saved === "en" ? "en" : "tr";
+    setLanguage(next);
+    document.documentElement.lang = next;
+    document.documentElement.dataset.language = next;
+  }, []);
+  const changeLanguage = (next: "tr" | "en") => {
+    setLanguage(next);
+    window.localStorage.setItem("hyp-language", next);
+    document.documentElement.lang = next;
+    document.documentElement.dataset.language = next;
+    const params = new URLSearchParams(searchParams.toString());
+    if (next === "tr") params.delete("lang"); else params.set("lang", "en");
+    router.replace(`${path}${params.size ? `?${params}` : ""}`, { scroll: false });
+  };
   useEffect(() => {
     if (!open) return;
     const close = (e: KeyboardEvent) => {
@@ -59,6 +78,11 @@ export function Header() {
             </Link>
           ))}
         </nav>
+        <div className="language-switch" role="group" aria-label="Dil seçimi">
+          <button type="button" className={language === "tr" ? "active" : ""} onClick={() => changeLanguage("tr")}>TR</button>
+          <span>/</span>
+          <button type="button" className={language === "en" ? "active" : ""} onClick={() => changeLanguage("en")}>EN</button>
+        </div>
         <button
           ref={button}
           className="menu-toggle"
