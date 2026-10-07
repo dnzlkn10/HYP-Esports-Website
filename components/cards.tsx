@@ -43,47 +43,25 @@ export function TeamCard({ team }: { team: Team }) {
     </Link>
   );
 }
-export function PlayerCard({
-  player,
-  index,
-}: {
-  player: Player;
-  index: number;
-}) {
-  return (
-    <article
-      className={`player-card card ${!player.announced ? "unannounced" : ""}`}
-    >
-      <div className="player-art">
-        <Image
-          src={player.image || "/player.svg"}
-          alt={player.image ? `${player.nickname} portrait` : ""}
-          fill
-          sizes="(max-width: 550px) 50vw, (max-width: 900px) 33vw, 20vw"
-        />
-        <span className="player-number">0{index + 1}</span>
-        {!player.announced && <span className="player-question">?</span>}
-        <span className="player-caption">
-          {player.announced ? "HYP ESPORTS" : "THE NEXT CHAPTER"}
-        </span>
-      </div>
-      <div className="player-info">
-        <h3>{player.nickname}</h3>
-        <p>{player.role}</p>
-        {player.nationality && <small>{player.nationality}</small>}
-        {player.announced && <Link className="text-link" href={`/teams/${player.id.split("-")[0]}/${encodeURIComponent(player.nickname.toLowerCase())}`}>View profile <ArrowUpRight size={14}/></Link>}
-        {player.socials?.map((s) => (
-          <a
-            key={s.label}
-            href={s.url}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            {s.label}
-          </a>
-        ))}
-      </div>
-    </article>
+export function PlayerCard({ player, index }: { player: Player; index: number }) {
+  const game = player.id.split("-")[0];
+  const inner = <>
+    <div className="player-art">
+      <Image src={player.image || "/player.svg"} alt={player.image ? `${player.nickname} portrait` : ""} fill sizes="(max-width: 550px) 50vw, (max-width: 900px) 33vw, 20vw" />
+      <span className="player-number">0{index + 1}</span>
+      {!player.announced && <span className="player-question">?</span>}
+      <span className="player-caption">{player.announced ? "HYP ESPORTS" : "THE NEXT CHAPTER"}</span>
+    </div>
+    <div className="player-info">
+      <h3>{player.nickname}</h3>
+      {game === "cs2" && <p>{player.role}</p>}
+      {player.nationality && <small>{player.nationality}</small>}
+    </div>
+  </>;
+  return player.announced ? (
+    <Link href={`/teams/${game}/${encodeURIComponent(player.nickname.toLowerCase())}`} className="player-card card player-card-link">{inner}</Link>
+  ) : (
+    <article className="player-card card unannounced">{inner}</article>
   );
 }
 export function MatchCard({ match }: { match: Match }) {
