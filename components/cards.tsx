@@ -71,6 +71,7 @@ export function PlayerCard({
         <h3>{player.nickname}</h3>
         <p>{player.role}</p>
         {player.nationality && <small>{player.nationality}</small>}
+        {player.announced && <Link className="text-link" href={`/teams/${player.id.split("-")[0]}/${encodeURIComponent(player.nickname.toLowerCase())}`}>View profile <ArrowUpRight size={14}/></Link>}
         {player.socials?.map((s) => (
           <a
             key={s.label}
