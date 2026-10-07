@@ -35,6 +35,7 @@ export function Header() {
     window.localStorage.setItem("hyp-language", next);
     document.documentElement.lang = next;
     document.documentElement.dataset.language = next;
+    window.dispatchEvent(new Event("hyp-language-change"));
   };
   useEffect(() => {
     if (!open) return;
