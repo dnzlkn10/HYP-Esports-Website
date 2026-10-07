@@ -11,6 +11,18 @@ export function Header() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [language, setLanguage] = useState<"tr" | "en">("tr");
+  const labels: Record<string, { tr: string; en: string }> = {
+    "/": { tr: "ANA SAYFA", en: "HOME" },
+    "/news": { tr: "HABERLER", en: "NEWS" },
+    "/matches": { tr: "MAÇLAR", en: "MATCHES" },
+    "/tournaments": { tr: "TURNUVALAR", en: "TOURNAMENTS" },
+    "/teams": { tr: "TAKIMLAR", en: "TEAMS" },
+    "/media": { tr: "MEDYA", en: "MEDIA" },
+    "/shop": { tr: "MAĞAZA", en: "SHOP" },
+    "/about": { tr: "HAKKIMIZDA", en: "ABOUT" },
+    "/contacts": { tr: "İLETİŞİM", en: "CONTACTS" },
+  };
+
   const button = useRef<HTMLButtonElement>(null);
   const panel = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -73,7 +85,7 @@ export function Header() {
               }
               className={item.href === "/join" ? "nav-join" : ""}
             >
-              {item.label}
+              {labels[item.href]?.[language] ?? item.label}
               {item.href === "/join" && <ArrowUpRight size={13} />}
             </Link>
           ))}
@@ -128,7 +140,7 @@ export function Header() {
               aria-current={path === item.href ? "page" : undefined}
             >
               <span>0{i + 1}</span>
-              {item.label}
+              {labels[item.href]?.[language] ?? item.label}
               <ArrowUpRight size={18} />
             </Link>
           ))}
