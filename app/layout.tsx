@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description:
     "The home of HYP Esports. Discover our Counter-Strike 2 and VALORANT teams, matches, news and the next generation of competitive talent.",
   applicationName: "HYP Esports",
+  keywords: ["HYP Esports", "HYP ESPOR", "HYP CS2", "HYP VALORANT", "esports Türkiye"],
+  authors: [{ name: "HYP Esports" }],
   robots: { index: true, follow: true },
   openGraph: {
     title: "HYP Esports",
