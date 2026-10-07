@@ -55,17 +55,5 @@ export const articles: Article[] = [
       "The current fixtures and events are examples only. Confirmed dates, formats and opponents will be published here.",
     ],
   },
-  {
-    slug: "first-collection",
-    title: "WEAR THE AMBITION.",
-    category: "ANNOUNCEMENT",
-    date: "2026-09-29",
-    art: "jersey",
-    description:
-      "A first look at the HYP merchandise concept. Designed for the next chapter.",
-    body: [
-      "The HYP Pro Jersey is a concept for a future merchandise collection, featuring a clean black finish and signature yellow details.",
-      "Merchandise is not available for purchase. Product designs are illustrative, with final materials, sizing and release timing to be confirmed.",
-    ],
-  },
+
 ];
