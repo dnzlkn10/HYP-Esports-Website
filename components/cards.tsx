@@ -54,7 +54,7 @@ export function PlayerCard({ player, index }: { player: Player; index: number })
     </div>
     <div className="player-info">
       <h3>{player.nickname}</h3>
-      {game === "cs2" && <p>{player.role}</p>}
+      {game === "cs2" && <div className="cs-role-row"><span className={`role-symbol role-${player.role.toLowerCase().replaceAll(" ","-")}`}>{player.role === "IGL" ? "♛" : player.role === "Entry" ? "✦" : "◆"}</span><span className="cs-role-badge">{player.role}</span></div>}
       {player.nationality && <small>{player.nationality}</small>}
     </div>
   </>;
