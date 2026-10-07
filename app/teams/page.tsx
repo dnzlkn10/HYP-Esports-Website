@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { teams } from "@/data/teams";
 import { TeamCard } from "@/components/cards";
 import { PageHeading } from "@/components/ui";
-import { JoinBanner } from "@/components/home/JoinBanner";
 export const metadata: Metadata = {
   title: "Teams",
   description: "Meet the HYP Counter-Strike 2 and VALORANT divisions.",
@@ -29,7 +28,6 @@ export default function Page() {
           </p>
         </div>
       </section>
-      <JoinBanner />
     </>
   );
 }
