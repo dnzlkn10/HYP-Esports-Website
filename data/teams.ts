@@ -10,6 +10,9 @@ const player = (nickname: string, index: number, game: string): Player => ({
   nickname,
   role: nickname === "TBA" ? "TO BE ANNOUNCED" : "Role to be announced",
   announced: nickname !== "TBA",
+  nationality: nickname === "JINAZEE" ? "Türkiye" : undefined,
+  birthDate: nickname === "JINAZEE" ? "8 Eylül 2010" : undefined,
+  bio: nickname === "JINAZEE" ? "HYP Esports CS2 oyuncusu. Rekabetçi oyun, gelişim ve takım disiplini odaklı." : undefined,
   equipment: nickname === "JINAZEE" ? equipment : undefined,
 });
 export const teams: Team[] = [
