@@ -1,21 +1,6 @@
 import type { Article } from "@/types";
 export const articles: Article[] = [
-  {
-    slug: "hyp-cs2-community-tournament",
-    title: "THE SERVER IS SET. ARE YOU READY?",
-    category: "TOURNAMENT",
-    date: "2026-10-07",
-    art: "arena",
-    description:
-      "HYP Esports is preparing its upcoming CS2 tournament for Saturday, 17 October. Teams, competition and the next chapter of HYP meet on one server.",
-    body: [
-      "HYP Esports is getting ready for its upcoming Counter-Strike 2 tournament, taking place on Saturday, 17 October 2026.",
-      "The event will bring teams together for competitive 5v5 Counter-Strike, with captains responsible for managing their lineups and communication throughout the tournament.",
-      "Competition matters, but so does respect. Toxic behaviour during matches, outside the server or around the event will not be tolerated. HYP wants every team to compete seriously and represent themselves properly.",
-      "This tournament is also an opportunity for HYP to watch emerging players and teams in a competitive environment. Strong individual performances, teamwork and communication will all stand out.",
-      "More information about the bracket, match schedule and participating teams will be announced as the tournament approaches."
-    ],
-  },
+
   {
     slug: "a-new-chapter",
     title: "A NEW CHAPTER. THE SAME AMBITION.",
