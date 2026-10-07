@@ -31,7 +31,7 @@ function translateText(root: HTMLElement, toTurkish: boolean) {
     const raw=node.nodeValue||""; const value=raw.trim(); if(!value) return;
     const el=node.parentElement; if(!el || ["SCRIPT","STYLE"].includes(el.tagName)) return;
     if(!el.dataset.enText) el.dataset.enText=value;
-    const en=el.dataset.enText;
+    const en=el.dataset.enText ?? value;
     if(toTurkish) {
       let translated=tr[en];
       if(!translated){
