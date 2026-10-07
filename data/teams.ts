@@ -1,9 +1,9 @@
 import type { Team, Player } from "@/types";
 const equipment = [
-  { name: "Wraith W75", category: "Keyboard", image: "/api/product-image?url=https%3A%2F%2Fwraithesports.com%2Fproducts%2Fwraith-w75v2-he-klavye%3F_pos%3D11%26_ss%3Dr", productUrl:"https://wraithesports.com/products/wraith-w75v2-he-klavye?_pos=11&_ss=r" },
-  { name: "Logitech G Pro X Superlight 2", category: "Mouse", image: "/api/product-image?url=https%3A%2F%2Fwww.logitechg.com%2Fen-us%2Fshop%2Fp%2Fpro-x2-superlight-wireless-mouse", productUrl:"https://www.logitechg.com/en-us/shop/p/pro-x2-superlight-wireless-mouse" },
-  { name: "Wraith Spirit of Aim Pro", category: "Mousepad", image: "/api/product-image?url=https%3A%2F%2Fwraithesports.com%2Fproducts%2Fspirit-of-aim-pro-mousepad", productUrl:"https://wraithesports.com/products/spirit-of-aim-pro-mousepad" },
-  { name: "Logitech G733", category: "Headset", image: "/api/product-image?url=https%3A%2F%2Fwww.logitechg.com%2Fen-us%2Fshop%2Fp%2Fg733-rgb-wireless-headset.981-000882", productUrl:"https://www.logitechg.com/en-us/shop/p/g733-rgb-wireless-headset.981-000882" },
+  { name:"Wraith W75", category:"Keyboard", image:"/klavye.png" },
+  { name:"Logitech G Pro X Superlight 2", category:"Mouse", image:"/mouse.png" },
+  { name:"Wraith Spirit of Aim Pro", category:"Mousepad", image:"/mouse pad.png" },
+  { name:"Logitech G733", category:"Headset", image:"/kulaklık.png" },
 ];
 const player = (nickname: string, index: number, game: string): Player => ({
   id: `${game}-${index}`,
