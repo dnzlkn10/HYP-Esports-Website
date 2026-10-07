@@ -7,6 +7,7 @@ export const navigation = [
   { href: "/media", label: "Media" },
   { href: "/shop", label: "Shop" },
   { href: "/about", label: "About" },
+  { href: "/contacts", label: "Contacts" },
 ];
 // Add verified organization URLs here. Unconfigured accounts are displayed as text, never dead links.
 export const socials: { label: string; url: string | null }[] = [
